@@ -2,11 +2,11 @@ FROM ghcr.io/puppeteer/puppeteer:latest
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY --chown=pptruser:pptruser package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY --chown=pptruser:pptruser . .
 
 EXPOSE 5000
 
